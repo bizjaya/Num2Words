@@ -3,6 +3,10 @@
 ## Overview
 
 Num2Words is a .NET 8.0 application that converts numeric values into their full English text representation. The converter supports various input formats, including currency, and can handle amounts up to 1 CENTILLION.
+Based on the number denomination from:
+//https://www.britannica.com/topic/large-numbers-1765137
+
+
 
 ## Features
 
@@ -20,6 +24,9 @@ The converter can handle the following input formats:
 - The converter supports numeric values with up to two decimal places for currency.
 - Input can include symbols like `$`, `USD`, `dollars`, or `USDT` to denote currency.
 - The converter can process and convert numbers up to 1 CENTILLION.
+- Assumes we are using American denomination for name and not British
+- 
+   ![Image description](/Imgs/ref.png)
 
 ## How to Run
 
