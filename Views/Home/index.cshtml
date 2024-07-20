@@ -1,0 +1,49 @@
+﻿@* @model Num2Words.Mvc.Pages.IndexModel *@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Num2Words Converter</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="inputAmount">Enter Number</label>
+                        <input type="text" class="form-control" id="inputAmount" />
+                    </div>
+                    <button class="btn btn-primary mt-2" id="convertButton">Convert</button>
+                </div>
+                <div class="card-footer">
+                    <h4>Result:</h4>
+                    <p id="conversionResult"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#convertButton").click(function () {
+            var input = $("#inputAmount").val();
+          //  alert(input);
+            $.ajax({
+                url: '@Url.Action("Convert", "Home")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(input), // Serialize data as JSON
+                success: function (data) {
+                    $("#conversionResult").text(data);
+                },
+                error: function () {
+                    $("#conversionResult").text("Conversion failed. Please try again.");
+                }
+            });
+        });
+    });
+</script>
