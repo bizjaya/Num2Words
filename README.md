@@ -21,10 +21,10 @@ The converter can handle the following input formats:
 
 ## Assumptions
 
+- It assumes the input is a number first, and only as currency if `$`, `USD`, `dollars`, or `USDT` is detected.
 - The converter supports numeric values with up to two decimal places for currency.
-- Input can include symbols like `$`, `USD`, `dollars`, or `USDT` to denote currency.
 - The converter can process and convert numbers up to 1 CENTILLION.
-- Assumes we are using American denomination for name and not British
+- Assumes we are using American denomination for number name and not British
 - 
    ![Image description](/Imgs/ref.png)
 
@@ -46,22 +46,20 @@ The converter can handle the following input formats:
    ```
 
 
-2. **Build And run**
+3. **Github workflow**
 
    ```bash
-   cd Num2Words
-   dotnet build
-   dotnet test
+   Run Pipeline in Github, it wont actually deploy to EC2 because no AWS credentials
    ```
 
-3. **Navigate to UI**
+4. **Navigate to UI**
 
    ```bash
    https://localhost:7040/
    ```
    ![Image description](/Imgs/ui.png)
 
-3. **Run Via cmd/Powershell**
+5. **Run Via cmd/Powershell**
 
    ```bash
    run test.ps1
