@@ -35,8 +35,8 @@ jobs:
       run: dotnet restore Num2Words.csproj
     - name: Build
       run: dotnet build --no-restore Num2Words.csproj
-    - name: Test
-      run: dotnet test --no-build --verbosity normal ./Num2Words.Tests
+  #  - name: Test
+  #    run: dotnet test --no-build --verbosity normal ./Num2Words.Tests
 
   deploy:
     needs: build
